@@ -9,6 +9,7 @@ import CenteredTabs from './CenteredTabs';
 function App() {
 
   const [ notesArr, setNotesArr ] = useState([]);
+  const [ cNotesArr, setCNotesArr ] = useState([]);
   const [tab, setTab] = React.useState(0);
 
   const handleChangeTab = (event, newValue) => {
@@ -44,7 +45,7 @@ function App() {
               <Typography variant="h6" style={{ textAlign: 'center'}}>
                 Centralized
               </Typography><br />
-              <SpacingGrid notesArr={notesArr}/>
+              <SpacingGrid notesArr={cNotesArr}/>
             </div>
           );
       default: 

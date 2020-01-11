@@ -9,13 +9,19 @@ import Paper from '@material-ui/core/Paper';
 import { TextField } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
+    central: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column'
+    },
     root: {
       flexGrow: 1,
     },
     paper: {
       display: 'flex',
       justifyContent: 'center',
-      minHeight: '100px',
+      minHeight: '150px',
       height: 'auto',
       padding: 4,
       width: 250,
@@ -27,19 +33,26 @@ const useStyles = makeStyles(theme => ({
 
 function Jgrid({ value }){
     const classes = useStyles();
+
+    // const [ ]
     return (
         <Grid key={value} item>
             <Paper className={classes.paper} >
-            <TextField
-            id="filled-textarea"
-            label="Enter note here"
-            placeholder="Placeholder"
-            multiline
-            //  variant="filled"
-            // rowsMax="auto"
-            // defaultValue="Default Value"
-            // placeholder="Enter Note here"
-            />
+            <form className={classes.central} noValidate autoComplete="off">
+                <TextField id="standard-basic" label="Title" style={{ width: 150 }}/>
+                <TextField
+                id="filled-textarea"
+                label="Enter note here"
+                // placeholder="Placeholder"
+                style={{ width: 150 }}
+                multiline
+                //  variant="filled"
+                // rowsMax="auto"
+                // defaultValue="Default Value"
+                // placeholder="Enter Note here"
+                />
+            </form>
+
             </Paper>
     </Grid>
     )
